@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section id="contact" class="p-6 my-12 scroll-mt-16 widescreen:section-min-height tallscreen:section-min-height">
+            <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+                Login
+            </h2>
+            <form action="" method="post" class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-lefr gap-4">
+
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label", for="email") }}
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="") }}
+                        <div class="text-red-600">
+                          {% for error in form.email.errors %}
+                            <span> {{ error }}</span>
+                          {% endfor %}
+                        </div>
+                    {% else %}
+                      {{ form.email(class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label", for="password") }}
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="") }}
+                        <div class="text-red-600">
+                          {% for error in form.password.errors %}
+                            <span> {{ error }}</span>
+                          {% endfor %}
+                        </div>
+                    {% else %}
+                      {{ form.password(class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none") }}
+                    {% endif %}
+                </div>
+
+                 <div>
+                     <span>{{ form.remember(class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded")}}</span>
+                    <span>{{ form.remember.label(class="ml-2 block text-sm text-gray-900")}}</span>
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded-xl border border-solid border-slate-900 dark:border-none") }}
+                </div>
+                
+            </form>
+        </section>
+{% endblock content%}

@@ -1,0 +1,13 @@
+{
+  "name": "write_here",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind" : " npx tailwindcss -i ./writeHere/static/src/input.css -o ./writeHere/static/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
